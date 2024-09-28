@@ -1,16 +1,16 @@
 class PassportJob:
-    def _init_(self, job_id, applicant_name, is_urgent):
+    def __init__(self, job_id, applicant_name, is_urgent):
         self.job_id = job_id
         self.applicant_name = applicant_name
         self.is_urgent = is_urgent
         self.status = "Pending"
 
-    def _repr_(self):
+    def __repr__(self):
         return f"Job ID: {self.job_id} \nApplicant: {self.applicant_name} \nUrgent: {self.is_urgent} \nStatus: {self.status}\n"
 
 
 class PassportPrintingQueue:
-    def _init_(self):
+    def __init__(self):
         self.jobs_queue = []
 
     def create_job(self, job_id, applicant_name, is_urgent):
@@ -58,7 +58,7 @@ def menu():
     print("6. Exit")
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     queue_system = PassportPrintingQueue()
 
     while True:
